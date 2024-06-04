@@ -10,8 +10,8 @@
   {{ post.text }}
 </div>
 <ul class="categories">
-  {% for category in post.categories.all %}
-    <li>{{ category }}</li>
+  {% for category in post.Categories.all %}
+    <li class="categories">{{ category }}</li>
   {% endfor %}
 </ul>
 {% endblock %}
