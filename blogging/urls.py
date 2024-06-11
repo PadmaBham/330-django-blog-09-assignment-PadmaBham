@@ -4,7 +4,7 @@ from rest_framework import routers
 from blogging.views import PostListView, PostDetailView, PostViewSet
 
 router = routers.DefaultRouter()
-router.register(r'posts', PostViewSet)
+router.register(r'api/posts', PostViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),
