@@ -13,6 +13,6 @@ class PostListView(ListView):
 
 
 class PostDetailView(DetailView):
-    model = Post
+    queryset = Post.objects.exclude(published_date__isnull=True).order_by('-published_date')
     template_name = "blogging/detail.html"
 

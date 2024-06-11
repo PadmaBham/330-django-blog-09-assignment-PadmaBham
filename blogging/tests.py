@@ -48,7 +48,7 @@ class FrontEndTestCase(TestCase):
                 # publish the first five posts
                 pubdate = self.now - self.timedelta * count
                 post.published_date = pubdate
-            post.save()
+            post.save()        
 
     def test_details_only_published(self):
         for count in range(1, 11):
