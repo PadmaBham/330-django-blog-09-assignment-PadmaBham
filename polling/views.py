@@ -6,9 +6,11 @@ from polling.models import Poll
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 
+
 def list_view(request):
-    context = {'polls': Poll.objects.all()}
-    return render(request, 'polling/list.html', context)
+    context = {"polls": Poll.objects.all()}
+    return render(request, "polling/list.html", context)
+
 
 def detail_view(request, poll_id):
     try:
@@ -23,5 +25,5 @@ def detail_view(request, poll_id):
             poll.score -= 1
         poll.save()
 
-    context = {'poll': poll}
-    return render(request, 'polling/detail.html', context)
+    context = {"poll": poll}
+    return render(request, "polling/detail.html", context)

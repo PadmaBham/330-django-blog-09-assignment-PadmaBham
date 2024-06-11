@@ -17,6 +17,7 @@ class Post(models.Model):
     def __str__(self):
         return self.title
 
+
 class Category(models.Model):
     name = models.CharField(max_length=128)
     description = models.TextField(blank=True)
@@ -26,16 +27,18 @@ class Category(models.Model):
         return self.name
 
     class Meta:
-        verbose_name_plural = 'Categories' 
+        verbose_name_plural = "Categories"
 
 
 class CategoryInline(admin.TabularInline):
-    model = Category.posts.through 
+    model = Category.posts.through
+
 
 class PostAdmin(admin.ModelAdmin):
     inlines = [
         CategoryInline,
     ]
 
+
 class CategoryAdmin(admin.ModelAdmin):
-    exclude = ('posts',)
+    exclude = ("posts",)
