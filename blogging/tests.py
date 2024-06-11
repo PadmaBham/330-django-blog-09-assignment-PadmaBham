@@ -7,7 +7,7 @@ from blogging.models import Post
 from blogging.models import Category
 
 import datetime
-from django.utils.timezone import utc
+# from django.utils.timezone import utc
 
 
 class PostTestCase(TestCase):
@@ -43,7 +43,7 @@ class FrontEndTestCase(TestCase):
     ]
 
     def setUp(self):
-        self.now = datetime.datetime.utcnow().replace(tzinfo=utc)
+        self.now = datetime.datetime.now(datetime.UTC)
         self.timedelta = datetime.timedelta(15)
         author = User.objects.get(pk=1)
         for count in range(1, 11):
