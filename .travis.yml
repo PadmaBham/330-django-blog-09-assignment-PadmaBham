@@ -1,6 +1,7 @@
+dist: bionic
 language: python
 python:
-  - "3.10"
+  - "3.12"
 install:
   - pip install -r requirements.txt
   - python manage.py migrate
