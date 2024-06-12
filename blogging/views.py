@@ -17,11 +17,13 @@ class PostListView(ListView):
     )
     template_name = "blogging/list.html"
 
+
 class PostViewSet(viewsets.ModelViewSet):
     queryset = Post.objects.exclude(published_date__isnull=True).order_by(
         "-published_date"
     )
     serializer_class = PostSerializer
+
 
 class PostDetailView(DetailView):
     queryset = Post.objects.exclude(published_date__isnull=True).order_by(
